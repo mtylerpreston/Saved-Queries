@@ -1,0 +1,6 @@
+select id as "weather_id", scores as "weather_data", property_id, updated, grade,
+            scores -> 'understoryData' -> 'hailOcc' as "pp_hail_occurrences",
+            scores -> 'understoryData' -> 'maxHail' as "pp_max_hail",
+            scores -> 'understoryData' -> 'windOcc' as "pp_wind_occurrences",
+            scores -> 'understoryData' -> 'maxGust' as "MaxGust"
+from property_grade where bulk_order_id = 6
